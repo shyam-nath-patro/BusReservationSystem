@@ -3,7 +3,7 @@
 // script.js
 // ==============================================
 
-const API = "busreservationsystem-production-59bd.up.railway.app";
+const API = "https://busreservationsystem-production-59bd.up.railway.app";
 
 
 // ==============================================
