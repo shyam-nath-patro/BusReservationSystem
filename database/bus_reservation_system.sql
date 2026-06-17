@@ -1199,52 +1199,61 @@ WHERE c_id = (
 
 -- VIEWS
 
+DROP VIEW IF EXISTS passenger_ticket_details;
+DROP VIEW IF EXISTS passenger_bus_details;
+DROP VIEW IF EXISTS conductor_bus_details;
 -- Passenger Ticket Details
 CREATE VIEW passenger_ticket_details AS
 SELECT
     p.p_id,
-    CONCAT(p.first_name,' ',p.last_name) AS passenger_name,
+    CONCAT(p.first_name, ' ', p.last_name) AS passenger_name,
     t.ticket_number,
     t.seat_number,
     t.fare
 FROM passengers p
 INNER JOIN passenger_ticket pt
-ON p.p_id = pt.p_id
+    ON p.p_id = pt.p_id
 INNER JOIN tickets t
-ON pt.t_id = t.t_id;
+    ON pt.t_id = t.t_id;
 
 
 -- Passenger Bus Details
+
 CREATE VIEW passenger_bus_details AS
 SELECT
     p.p_id,
-    CONCAT(p.first_name,' ',p.last_name) AS passenger_name,
+    CONCAT(p.first_name, ' ', p.last_name) AS passenger_name,
+    b.b_number,
     b.bus_name,
+    b.bus_type,
     b.source,
     b.destination,
     b.departure_time,
     b.arrival_time
 FROM passengers p
 INNER JOIN passenger_bus pb
-ON p.p_id = pb.p_id
+    ON p.p_id = pb.p_id
 INNER JOIN buses b
-ON pb.b_id = b.b_number;
-
+    ON pb.b_number = b.b_number;
 
 -- Conductor Bus Details
 CREATE VIEW conductor_bus_details AS
 SELECT
     c.c_id,
-    CONCAT(c.first_name,' ',c.last_name) AS conductor_name,
+    CONCAT(c.first_name, ' ', c.last_name) AS conductor_name,
+    b.b_number,
     b.bus_name,
     b.bus_type,
     b.source,
-    b.destination
+    b.destination,
+    b.departure_time,
+    b.arrival_time
 FROM conductors c
 INNER JOIN conductor_bus cb
-ON c.c_id = cb.c_id
+    ON c.c_id = cb.c_id
 INNER JOIN buses b
-ON cb.b_id = b.b_number;
+    ON cb.b_number = b.b_number;
+
 
 SELECT * FROM passenger_ticket_details;
 SELECT * FROM passenger_bus_details;
