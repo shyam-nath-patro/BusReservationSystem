@@ -245,14 +245,6 @@ GET /conductor-bus
 
 ---
 
-## 👨‍💻 Developed By
-
-**Shyam Nath Patro**
-
-Database Management Systems (DBMS) Capstone Project
-
----
-
 ## 📄 License
 
 This project is developed for educational purposes as part of the Database Management Systems course.
