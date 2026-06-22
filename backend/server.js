@@ -1,7 +1,3 @@
-// ==============================================
-// Bus Reservation System
-// server.js
-// ==============================================
 
 const http = require("http");
 const url = require("url");
@@ -9,10 +5,6 @@ const db = require("./db");
 
 const PORT = 3000;
 
-
-// ==============================================
-// Configuration
-// ==============================================
 
 const validTables = [
     "passengers",
