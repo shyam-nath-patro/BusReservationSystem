@@ -2,10 +2,6 @@ require("dotenv").config();
 
 const mysql = require("mysql2");
 
-// =========================
-// DEBUG ENV VARIABLES
-// =========================
-
 console.log("================================");
 console.log("DB_HOST :", process.env.DB_HOST);
 console.log("DB_PORT :", process.env.DB_PORT);
