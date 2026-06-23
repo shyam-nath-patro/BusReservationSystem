@@ -980,23 +980,6 @@ MODIFY bus_name VARCHAR(150);
 ALTER TABLE passengers
 DROP COLUMN emergency_contact;
 
--- INDEXES
--- Index on Passenger Name
-CREATE INDEX idx_passenger_name
-ON passengers(first_name);
-
--- Index on Bus Name
-CREATE INDEX idx_bus_name
-ON buses(bus_name);
-
--- Index on Ticket Number
-CREATE INDEX idx_ticket_number
-ON tickets(ticket_number);
-
-SHOW INDEX FROM passengers;
-SHOW INDEX FROM buses;
-SHOW INDEX FROM tickets;
-
 -- JOINS
 
 -- Display Passenger Details with Ticket Details
